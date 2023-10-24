@@ -2,8 +2,19 @@ function sentenceInput (event){
     event.preventDefault();
     const input = document.getElementById("input").value;
     const result = document.getElementById("result");
-    result.innerText = input;
+    const sentenceArray = input.split("");
+    //result.innerText = sentenceArray
+    const newWordsArray = [];
+    sentenceArray.forEach(function(word){
+    if (word.length >= 3){
+        newWordsArray.push(word);
+        result.innerText = newWordsArray.join(",");
+
+    }
+   
+});
 }
+
 
 
 window.addEventListener("load",function(){
